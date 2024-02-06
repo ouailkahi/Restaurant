@@ -918,7 +918,7 @@ body.nav-active { overflow: hidden; }
   transform: translateX(-50%);
   width: 140px;
   height: 100%;
-  background-image: url('../images/img-pattern.svg');
+  background-image: url('./assets/images/img-pattern.svg');
   background-position: center;
   background-size: cover;
   background-repeat: repeat;

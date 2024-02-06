@@ -7,16 +7,10 @@ import { locationOutline, timeOutline, callOutline, mailOutline } from 'ionicons
 
 
 export default function Topbar() {
-  const dispatch = useDispatch();
+ 
   const { data, status } = useSelector((state) => state.contact);
 
-  useEffect(() => {
-    if (data === null) {
-      dispatch(fetchContactData());
-    } else {
-      console.log(data);
-    }
-  }, [data, dispatch]);
+ 
 
   return (
     <div className="topbar">

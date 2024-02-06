@@ -1,19 +1,48 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IonIcon } from '@ionic/react';
 import { closeOutline } from 'ionicons/icons';
 
 export default function Navbar() {
     const [isActive, setIsActive] = useState(false);
+    const [ActiveHeader,setActiveHeader] = useState(false)
+    const [topActive,setTopActive] = useState(true)
+    useEffect(() => {
+      let prevScrollPos = window.scrollY;
+      
+      const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+        if(currentScrollPos === 0 ){
+          setTopActive(true)
+        }
+        else if (prevScrollPos > currentScrollPos) {
+          setActiveHeader(true); 
+          setTopActive(false)
+          // Scroll up
+        } else {
+          setActiveHeader(false);
+          setTopActive(false)
+          // Scroll down
+        }
+        
+        prevScrollPos = currentScrollPos;
+      };
+      
+      window.addEventListener('scroll', handleScroll);
+      
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
   
     const toggleNavbar = () => {
       setIsActive(!isActive);
     };
     const closeNavbar = () => {
         setIsActive(false);
-      };
+    };
   
   return (
-    <header className="header" data-header>
+    <header className={`header ${topActive ? '' : 'active'}  ${ActiveHeader ? ''  : 'hide'}`} data-header>
       <div className="container">
         <a href="#" className="logo">
           <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home" />
