@@ -6,18 +6,21 @@ import Main from './component/Main'
 import Service from './component/Service'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchContactData } from './Redux/contactSlice'
+import { fecthRepasData } from './Redux/repasSlice'
 
 function App() {
   const [count, setCount] = useState(0)
-  const { data, status } = useSelector(state => state.contact)
+  const { data } = useSelector(state => state.contact)
+  const { repas, status} = useSelector(state => state.repas)
   const dispatch = useDispatch();
   useEffect(() => {
-    if (data === null) {
+    if (data === null && status!== "succeeded") {
       dispatch(fetchContactData());
+      dispatch(fecthRepasData())
     } else {
       console.log(data);
     }
-  }, [data, dispatch]);
+  }, [data, status, dispatch]);
 
   return (
 
