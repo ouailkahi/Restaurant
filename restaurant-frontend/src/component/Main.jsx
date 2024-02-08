@@ -4,6 +4,7 @@ import Service from './Service'
 import About from './About'
 import SpecialDish from './SpecialDish'
 import Menu from './Menu'
+import Features from './Features'
 
 export default function Main() {
   return (
@@ -14,6 +15,7 @@ export default function Main() {
             <About/>
             <SpecialDish/>
             <Menu/>
+            <Features/>
             
         </article>
     </main>
