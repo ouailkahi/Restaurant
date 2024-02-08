@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS menu (
     position INT NOT NULL,
     disponible BOOLEAN NOT NULL
 );
+
 -- Ajout de la table reservation
 CREATE TABLE IF NOT EXISTS reservation (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -31,7 +32,6 @@ CREATE TABLE IF NOT EXISTS reservation (
     nbr_personnes INT NOT NULL,
     date_reservation DATE NOT NULL,
     heure_debut TIME NOT NULL,
-    heure_fin TIME NOT NULL,
     message TEXT
 );
 -- Ajout de la table contact

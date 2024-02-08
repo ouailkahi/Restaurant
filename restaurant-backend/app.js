@@ -46,8 +46,29 @@ app.get('/contact', (req, res) => {
     });
 });
 
+app.post('/reservation', (req, res) => {
+    const { name, phone, numberOfPeople,reservationDate,reservationTime, message } = req.body;
+    
+    // Vérifiez si toutes les données requises sont fournies
+    if (!name || !phone || !numberOfPeople ||!reservationDate ||!reservationTime|| !message) {
+        return res.status(400).json({ message: 'Toutes les données sont requises' });
+    }
+
+    // Insérer les données dans la base de données
+    const sql = 'INSERT INTO reservation (nom_client, phone_number, nbr_personnes, date_reservation , heure_debut , message) VALUES (?, ?, ?, ?, ?,?)';
+    db.query(sql, [name, phone, numberOfPeople,reservationDate,reservationTime, message], (err, result) => {
+        if (err) {
+            console.error('Erreur lors de l\'insertion des données de réservation : ', err);
+            res.status(500).send('Erreur serveur');
+        } else {
+            res.status(201).json({ message: 'Données de réservation ajoutées avec succès' });
+        }
+    });
+});
+
 // Vos autres routes Express vont ici
 
 app.listen(port, () => {
     console.log(`Serveur Express écoutant sur le port ${port}`);
 });
+
