@@ -1,5 +1,5 @@
 -- Création de la base de données
-drop database restaurant_database;
+drop database if exists restaurant_database;
 CREATE DATABASE IF NOT EXISTS restaurant_database collate utf8_general_ci;
 
 -- Utilisation de la base de données
@@ -23,7 +23,6 @@ CREATE TABLE IF NOT EXISTS menu (
     position INT NOT NULL,
     disponible BOOLEAN NOT NULL
 );
-
 -- Ajout de la table reservation
 CREATE TABLE IF NOT EXISTS reservation (
     id INT AUTO_INCREMENT PRIMARY KEY,
