@@ -1,44 +1,36 @@
-import React, { useEffect, useState } from 'react'
-import Topbar from './component/Topbar'
-import Navbar from './component/Navbar'
-import Home from './component/Home'
-import Main from './component/Main'
-import Service from './component/Service'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchContactData } from './Redux/contactSlice'
-import { fecthRepasData } from './Redux/repasSlice'
-import Footer from './component/Footer'
+import React, { Children, useEffect, useState } from 'react'
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import Dashbord from './component/Dashbord';
+import Main from './component/Main';
+import Service from './component/Service';
 
 function App() {
-  const [count, setCount] = useState(0)
-  const { data } = useSelector(state => state.contact)
-  const { repas, status} = useSelector(state => state.repas)
-  const dispatch = useDispatch();
-  useEffect(() => {
-    if (data === null && status!== "succeeded") {
-      dispatch(fetchContactData());
-      dispatch(fecthRepasData())
-    } else {
-      console.log(data);
+  const router = createBrowserRouter([
+    {
+      // Root route
+      path: "/",
+      element: <Dashbord /> ,
+      children:[
+        {
+          index:true,
+          element:<Main/>
+        },
+        {
+          path:"service",
+          element:<Service/>
+        },
+      ]
     }
-  }, [data, status, dispatch]);
+  ]);
 
   return (
-
-    <React.Fragment>
-      {data !== null && (
-        <React.Fragment>
-          <Topbar />
-          <Navbar />
-          <Main />
-          <Footer/>
-        </React.Fragment>
-
-      )}
-
-    </React.Fragment>
-
-  )
+    <>
+        <RouterProvider router={router} />
+    </>
+  );
 }
-
 export default App
