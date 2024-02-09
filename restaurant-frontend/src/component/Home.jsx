@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IonIcon } from '@ionic/react';
 import { chevronBack, chevronForward } from 'ionicons/icons';
 
@@ -6,26 +6,36 @@ export default function Home() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const nextSlide = () => {
-        setActiveIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1)); // Assurez-vous de modifier le nombre en fonction du nombre total d'éléments dans votre slider
+        setActiveIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
     };
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            nextSlide();
+        }, 6000);
+
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, []); // Cette dépendance vide assure que l'effet ne se déclenche qu'une seule fois lors du montage du composant
 
     const slides = [
         {
             bgImage: './assets/images/hero-slider-1.jpg',
-            subtitle: 'Tradational & Hygine',
+            subtitle: 'Traditionnel & Hygiénique',
             title: 'For the love of delicious food',
             text: 'Come with family & feel the joy of mouthwatering food',
         },
         {
             bgImage: './assets/images/hero-slider-2.jpg',
-            subtitle: 'delightful experience',
+            subtitle: 'Expérience délicieuse',
             title: 'Flavors Inspired by the Seasons',
             text: 'Come with family & feel the joy of mouthwatering food',
         },
         {
             bgImage: './assets/images/hero-slider-3.jpg',
-            subtitle: 'amazing & delicious',
-            title: 'Where every flavor tells a stor**-y',
+            subtitle: 'Étonnant et délicieux',
+            title: 'Where every flavor tells a story',
             text: 'Come with family & feel the joy of mouthwatering food',
         },
     ];
@@ -39,8 +49,8 @@ export default function Home() {
                             <img src={slide.bgImage} width="1880" height="950" alt="" className="img-cover" />
                         </div>
                         <p className="label-2 section-subtitle slider-reveal">{slide.subtitle}</p>
-                        <h1 className="display-1 hero-title slider-reveal">{slide.title}</h1>
-                        <p className="body-2 hero-text slider-reveal">{slide.text}</p>
+                        <h1 className="display-1 hero-title slider-reveal" style={{fontSize:'100px'}}>{slide.title}</h1>
+                        <p className="body-2 hero-text slider-reveal" >{slide.text}</p>
                         <a href="#" className="btn btn-primary slider-reveal">
                             <span className="text text-1">View Our Menu</span>
                             <span className="text text-2" aria-hidden="true">View Our Menu</span>

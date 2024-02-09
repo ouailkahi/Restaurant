@@ -42,7 +42,7 @@ export default function Navbar() {
     };
   
   return (
-    <header className={`header ${topActive ? '' : 'active'}  ${ActiveHeader ? ''  : 'hide'}`} data-header>
+    <header className={`header ${topActive ? ''  : !ActiveHeader ? 'active hide': 'active'}`} data-header>
       <div className="container">
         <a href="#" className="logo">
           <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home" />
@@ -59,7 +59,7 @@ export default function Navbar() {
 
           <ul className="navbar-list">
             <li className="navbar-item">
-              <a href="#home" className="navbar-link hover-underline active">
+              <a href="#home" className="navbar-link hover-underline">
                 <div className="separator"></div>
                 <span className="span">Home</span>
               </a>
@@ -79,15 +79,10 @@ export default function Navbar() {
               </a>
             </li>
 
-            <li className="navbar-item">
-              <a href="#" className="navbar-link hover-underline">
-                <div className="separator"></div>
-                <span className="span">Our Chefs</span>
-              </a>
-            </li>
+           
 
             <li className="navbar-item">
-              <a href="#" className="navbar-link hover-underline">
+              <a href="#contact" className="navbar-link hover-underline">
                 <div className="separator"></div>
                 <span className="span">Contact</span>
               </a>
@@ -110,7 +105,7 @@ export default function Navbar() {
           </div>
         </nav>
 
-        <a href="#" className="btn btn-secondary">
+        <a href="#reservation" className="btn btn-secondary">
           <span className="text text-1">Find A Table</span>
           <span className="text text-2" aria-hidden="true">Find A Table</span>
         </a>

@@ -65,6 +65,31 @@ app.post('/reservation', (req, res) => {
         }
     });
 });
+app.post('/notification', (req, res) => {
+    console.log(req.body);
+    const { email } = req.body;
+    console.log(email);
+    // Vérifie si l'e-mail est fourni
+    if (!email) {
+        return res.status(400).json({ message: 'L\'adresse e-mail est requise' });
+    }
+
+    // Insère l'e-mail dans la table notification
+    const sql = 'INSERT INTO notification (email) VALUES (?)';
+    db.query(sql, [email], (err, result) => {
+        if (err) {
+            console.error('Erreur lors de l\'insertion de l\'e-mail dans la table notification : ', err);
+            // Si l'e-mail est déjà présent dans la table (conflit de clé unique)
+            if (err.code === 'ER_DUP_ENTRY') {
+                return res.status(409).json({ message: 'Cet e-mail est déjà inscrit' });
+            }
+            res.status(500).send('Erreur serveur');
+        } else {
+            res.status(201).json({ message: 'E-mail enregistré avec succès' });
+        }
+    });
+});
+
 
 // Vos autres routes Express vont ici
 
