@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const photo =[
     {
@@ -30,7 +31,7 @@ export default function Service() {
             {photo.map((value,index)=>(
                 <li key={index}>
                 <div className="service-card">
-                  <a href="#" className="has-before hover:shine">
+                  <Link to={"/route/"+value.title} className="has-before hover:shine">
                     <figure className="card-banner img-holder" style={{ width: '285px', height: '336px' }}>
                       <img
                         src={value.image}
@@ -41,14 +42,14 @@ export default function Service() {
                         className="img-cover"
                       />
                     </figure>
-                  </a>
+                  </Link>
                   <div className="card-content">
                     <h3 className="title-4 card-title">
-                      <a href="#">{value.title}</a>
+                      <Link to={"/route"}>{value.title}</Link>
                     </h3>
-                    <a href="#" className="btn-text hover-underline label-2">
+                    <Link to={"/route"} className="btn-text hover-underline label-2">
                       View Menu
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </li>
