@@ -7,6 +7,7 @@ import Service from './component/Service'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchContactData } from './Redux/contactSlice'
 import { fecthRepasData } from './Redux/repasSlice'
+import Footer from './component/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,6 +31,7 @@ function App() {
           <Topbar />
           <Navbar />
           <Main />
+          <Footer/>
         </React.Fragment>
 
       )}

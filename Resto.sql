@@ -55,6 +55,15 @@ CREATE TABLE IF NOT EXISTS notification (
 INSERT INTO contact (phone, location, lunch_time_start, lunch_time_end, dinner_time_start, dinner_time_end, email)
 VALUES ('+212-688445879', 'Delicious City', '12:00:00', '14:30:00', '17:00:00', '22:00:00', 'booking@restaurant.com');
 
+INSERT INTO repas (nom, prix, description, photo, type) 
+VALUES 
+    ('Spaghetti Bolognaise', 12.99, 'Délicieuses pâtes avec une sauce bolognaise maison.', './assets/images/menu-1.png', 'breakfast'),
+    ('Salade César', 8.49, 'Salade fraîche avec poulet grillé, parmesan et vinaigrette césar.', './assets/images/menu-2.png', 'appetizers'),
+    ('Burger Classique', 9.99, 'Burger juteux avec fromage, laitue, tomate et oignon.', './assets/images/menu-3.png', 'drinks'),
+    ('Pizza Pepperoni', 11.50, 'Pizza garnie de pepperoni, fromage fondu et sauce tomate.', './assets/images/menu-4.png', 'breakfast'),
+    ('Sushi Assorti', 14.99, 'Assortiment de sushis frais et savoureux.', './assets/images/menu-5.png', 'appetizers'),
+    ('Salade de Fruits Frais', 6.99, 'Mélange rafraîchissant de fruits de saison.', './assets/images/menu-6.png', 'drinks');
+
 
 
 

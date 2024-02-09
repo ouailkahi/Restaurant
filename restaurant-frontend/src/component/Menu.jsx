@@ -5,9 +5,6 @@ function Menu() {
 
     const {repas,status}=useSelector(state => state.repas)
 
-
-    
-
     useEffect(()=>{
         if(status==="succeeded"){
             console.log(repas);

@@ -45,7 +45,7 @@ export default function Reservation() {
 
     return (
         <>
-            <section className="section testi text-center has-bg-image" style={{ backgroundImage: `url('./assets/images/testimonial-bg.jpg')` }} aria-label="testimonials">
+            <section className="section testi text-center has-bg-image" style={{ backgroundImage: `url('./assets/images/testimonial-bg.jpg')` }} aria-label="testimonials" >
                 <div className="container">
                     <div className="quote">”</div>
                     <p className="headline-2 testi-text">
@@ -62,7 +62,7 @@ export default function Reservation() {
                     </div>
                 </div>
             </section>
-            <section className="reservation">
+            <section className="reservation" id='reservation'>
                 <div className="container">
                     <div className="form reservation-form bg-black-10">
 
