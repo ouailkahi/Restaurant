@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SpecialDish() {
   return (
@@ -19,10 +20,10 @@ function SpecialDish() {
             <del className="del body-3">$40.00</del>
             <span className="span body-1">$20.00</span>
           </div>
-          <a href="#" className="btn btn-primary">
+          <Link to={"/service"}className="btn btn-primary">
             <span className="text text-1">View All Menu</span>
             <span className="text text-2" aria-hidden="true">View All Menu</span>
-          </a>
+          </Link>
         </div>
       </div>
       <img src="./assets/images/shape-4.png" width="179" height="359" loading="lazy" alt="" className="shape shape-1" />

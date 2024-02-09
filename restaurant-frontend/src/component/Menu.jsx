@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function Menu() {
 
@@ -42,10 +43,10 @@ function Menu() {
         <p className="menu-text text-center">
           During winter daily from <span className="span">7:00 pm</span> to <span className="span">9:00 pm</span>
         </p>
-        <a href="#" className="btn btn-primary">
+        <Link to={"/service"} className="btn btn-primary">
           <span className="text text-1">View All Menu</span>
           <span className="text text-2" aria-hidden="true">View All Menu</span>
-        </a>
+        </Link>
         <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape" className="shape shape-2 move-anim" />
         <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape" className="shape shape-3 move-anim" />
       </div>

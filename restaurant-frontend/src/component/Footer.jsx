@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     const [email, setEmail] = useState('');
@@ -101,7 +102,7 @@ export default function Footer() {
                             <a href="#" className="label-2 footer-link hover-underline">Home</a>
                         </li>
                         <li>
-                            <a href="#" className="label-2 footer-link hover-underline">Menus</a>
+                            <Link to={"/service"} className="label-2 footer-link hover-underline">Menus</Link>
                         </li>
                         <li>
                             <a href="#" className="label-2 footer-link hover-underline">About Us</a>
