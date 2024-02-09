@@ -16,6 +16,7 @@ export default function Main() {
             <About/>
             <SpecialDish/>
             <Menu/>
+            <Features/>
             
             <Reservation/>
             <Features/>
