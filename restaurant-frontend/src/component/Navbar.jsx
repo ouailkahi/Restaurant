@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IonIcon } from '@ionic/react';
 import { closeOutline } from 'ionicons/icons';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     const [isActive, setIsActive] = useState(false);
@@ -44,9 +45,9 @@ export default function Navbar() {
   return (
     <header className={`header ${topActive ? ''  : !ActiveHeader ? 'active hide': 'active'}`} data-header>
       <div className="container">
-        <a href="#" className="logo">
+        <Link to={"/"} className="logo">
           <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home" />
-        </a>
+        </Link>
 
          <nav className={`navbar ${isActive ? 'active' : ''}`} data-navbar>
          <button className="close-btn" aria-label="close menu" data-nav-toggler onClick={closeNavbar}>

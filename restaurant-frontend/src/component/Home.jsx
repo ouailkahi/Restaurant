@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { IonIcon } from '@ionic/react';
 import { chevronBack, chevronForward } from 'ionicons/icons';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -51,10 +52,10 @@ export default function Home() {
                         <p className="label-2 section-subtitle slider-reveal">{slide.subtitle}</p>
                         <h1 className="display-1 hero-title slider-reveal" style={{fontSize:'100px'}}>{slide.title}</h1>
                         <p className="body-2 hero-text slider-reveal" >{slide.text}</p>
-                        <a href="#" className="btn btn-primary slider-reveal">
+                        <Link to={"/service"} className="btn btn-primary slider-reveal">
                             <span className="text text-1">View Our Menu</span>
                             <span className="text text-2" aria-hidden="true">View Our Menu</span>
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
