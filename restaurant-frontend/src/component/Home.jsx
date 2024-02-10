@@ -65,7 +65,7 @@ export default function Home() {
             <button className="slider-btn next" aria-label="slide to next" data-next-btn onClick={nextSlide}>
                 <IonIcon icon={chevronForward} />
             </button>
-            <a href="#" className="hero-btn has-after">
+            <a href="#reservation" className="hero-btn has-after">
                 <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon" />
                 <span className="label-2 text-center span">Book A Table</span>
             </a>

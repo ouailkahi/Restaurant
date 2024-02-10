@@ -80,9 +80,9 @@ export default function Navbar() {
 
           <ul className="navbar-list">
             <li className="navbar-item">
-              <Link to={"/" }className="navbar-link hover-underline">
+              <Link to={"/"} className="navbar-link hover-underline" onClick={scrollToTop}>
                 <div className="separator"></div>
-                <span className="span">Home</span>
+                <span className="span" >Home</span>
               </Link>
             </li>
 
@@ -128,10 +128,10 @@ export default function Navbar() {
           </div>
         </nav>
 
-        <a href="#reservation" className="btn btn-secondary">
+        <Link to={"/reservation" }className="btn btn-secondary">
           <span className="text text-1">Find A Table</span>
           <span className="text text-2" aria-hidden="true">Find A Table</span>
-        </a>
+        </Link>
 
         <button className={`nav-open-btn ${isActive ? 'active' : ''}`} aria-label="open menu" onClick={toggleNavbar}>
           <span className="line line-1"></span>

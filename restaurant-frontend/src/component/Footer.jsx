@@ -96,7 +96,7 @@ export default function Footer() {
                                 <span className="text text-2" aria-hidden="true">Subscribe</span>
                             </button>
                             
-                             {/* Afficher le message de succès ou d'erreur */}
+                             
                         </form>
                         {message && <p>{message}</p>}
                     </div>
@@ -110,9 +110,7 @@ export default function Footer() {
                         <li>
                             <a href="#" className="label-2 footer-link hover-underline">About Us</a>
                         </li>
-                        <li>
-                            <a href="#" className="label-2 footer-link hover-underline">Our Chefs</a>
-                        </li>
+                        
                         <li>
                             <a href="#" className="label-2 footer-link hover-underline">Contact</a>
                         </li>
@@ -122,10 +120,10 @@ export default function Footer() {
                             <a href="#" className="label-2 footer-link hover-underline">Facebook</a>
                         </li>
                         <li>
-                            <a href="#" className="label-2 footer-link hover-underline">Instagram</a>
+                            <a href="https://www.instagram.com/uail_kahi/" className="label-2 footer-link hover-underline">Instagram</a>
                         </li>
                         <li>
-                            <a href="#" className="label-2 footer-link hover-underline">Twitter</a>
+                            <a href="https://www.linkedin.com/in/ouail-kahi-69b490268/" className="label-2 footer-link hover-underline">Linkedin</a>
                         </li>
                         <li>
                             <a href="#" className="label-2 footer-link hover-underline">Youtube</a>

@@ -69,7 +69,7 @@ export default function Reservation() {
                         <form onSubmit={handleSubmit} className="form-left">
                             <h2 className="headline-1 text-center">Online Reservation</h2>
                             <p className="form-text text-center">
-                                Booking request <a href="tel:+88123123456" className="link">+88-123-123456</a> or fill out the order form
+                                Booking request <a href="tel:0688445879" className="link">+212-688445879</a> or fill out the order form
                             </p>
                             <div className="input-wrapper">
                                 <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" autoComplete="off" className="input-field" />
@@ -81,7 +81,9 @@ export default function Reservation() {
                                     <select name="numberOfPeople" value={formData.numberOfPeople} onChange={handleChange} className="input-field">
                                         <option value="1">1 Person</option>
                                         <option value="2">2 Person</option>
-                                        {/* Ajoutez les autres options ici */}
+                                        <option value="3">3 Person</option>
+                                        <option value="4">4 Person</option>
+                                        
                                     </select>
                                     <ion-icon name="chevron-down"></ion-icon>
                                 </div>
@@ -118,7 +120,7 @@ export default function Reservation() {
                                     </select>
                                     <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
                                 </div>
-                                {/* Ajoutez les deux autres div avec des icônes et des sélecteurs ici */}
+                                
                             </div>
                             <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Message" autoComplete="off" className="input-field"></textarea>
                             <button type="submit" className="btn btn-secondary">

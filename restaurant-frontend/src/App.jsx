@@ -13,6 +13,7 @@ import About from './component/About';
 import Footer from './component/Footer';
 import Features from './component/Features';
 import SpecialDish from './component/SpecialDish';
+import Reservation from './component/Reservation';
 
 function App() {
   const router = createBrowserRouter([
@@ -48,6 +49,10 @@ function App() {
          {
           path:"s",
           element:<SpecialDish/>
+         },
+         {
+          path:"reservation",
+          element:<Reservation/>
          }
          
       ]

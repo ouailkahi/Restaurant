@@ -12,7 +12,7 @@ export default function Main() {
     <main>
         <article>
             <Home/>
-            {/* <Service/> */}
+            
             <section id="about-section">
           <About />
         </section>

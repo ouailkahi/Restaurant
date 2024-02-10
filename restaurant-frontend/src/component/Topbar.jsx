@@ -20,7 +20,7 @@ export default function Topbar() {
             <IonIcon icon={locationOutline} aria-hidden="true" />
           </div>
           <span className="span">
-            Restaurant St, Delicious City, London 9578, UK
+            Restaurant St, Delicious City, Tetouan 9578, Maroc
           </span>
         </address>
         <div className="separator"></div>

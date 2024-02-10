@@ -7,6 +7,8 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Main from './Main';
 import { Outlet } from 'react-router';
+import { chevronUpOutline } from 'ionicons/icons';
+import { IonIcon } from '@ionic/react';
 export default function Dashbord() {
 
     const [count, setCount] = useState(0)
@@ -31,8 +33,12 @@ export default function Dashbord() {
           <Navbar />
           <br />
           <br />
-          <Outlet />
+          <Outlet/>
+          <br />
           <Footer/>
+          <a href="#top" className="back-top-btn active" aria-label="back to top" data-back-top-btn>
+            <IonIcon icon={chevronUpOutline} aria-hidden="true" />
+          </a>
         </React.Fragment>
 
       )}
