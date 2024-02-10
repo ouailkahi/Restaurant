@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { IonIcon } from '@ionic/react';
 import { closeOutline } from 'ionicons/icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { scroller } from 'react-scroll';
+
 
 export default function Navbar() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
     const [isActive, setIsActive] = useState(false);
     const [ActiveHeader,setActiveHeader] = useState(false)
     const [topActive,setTopActive] = useState(true)
+
+
+
+
     useEffect(() => {
       let prevScrollPos = window.scrollY;
       
@@ -34,6 +43,8 @@ export default function Navbar() {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
+
+
   
     const toggleNavbar = () => {
       setIsActive(!isActive);
@@ -41,12 +52,21 @@ export default function Navbar() {
     const closeNavbar = () => {
         setIsActive(false);
     };
+
+
+    const scrollToAbout = () => {
+      scroller.scrollTo('about', {
+        duration: 800,
+        delay: 0,
+        smooth: 'easeInOutQuart'
+      });
+    }
   
   return (
     <header className={`header ${topActive ? ''  : !ActiveHeader ? 'active hide': 'active'}`} data-header>
       <div className="container">
         <Link to={"/"} className="logo">
-          <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home" />
+          <img src="../assets/images/logo.svg" width="160" height="50" alt="Grilli - Home" />
         </Link>
 
          <nav className={`navbar ${isActive ? 'active' : ''}`} data-navbar>
@@ -60,33 +80,35 @@ export default function Navbar() {
 
           <ul className="navbar-list">
             <li className="navbar-item">
-              <a href="#home" className="navbar-link hover-underline">
+              <Link to={"/" }className="navbar-link hover-underline">
                 <div className="separator"></div>
                 <span className="span">Home</span>
-              </a>
+              </Link>
             </li>
 
             <li className="navbar-item">
-              <a href="#menu" className="navbar-link hover-underline">
+              <Link to={"/service" } onClick={(e) => {
+
+              }} className="navbar-link hover-underline">
                 <div className="separator"></div>
                 <span className="span">Menus</span>
-              </a>
+              </Link>
             </li>
 
             <li className="navbar-item">
-              <a href="#about" className="navbar-link hover-underline">
+              <Link to={"/features"} onClick={scrollToTop} className="navbar-link hover-underline" >
                 <div className="separator"></div>
                 <span className="span">About Us</span>
-              </a>
+              </Link>
             </li>
 
            
 
             <li className="navbar-item">
-              <a href="#contact" className="navbar-link hover-underline">
+              <Link to={"/s"} onClick={scrollToTop} className="navbar-link hover-underline">
                 <div className="separator"></div>
-                <span className="span">Contact</span>
-              </a>
+                <span className="span">Special Dish</span>
+              </Link>
             </li>
           </ul>
 

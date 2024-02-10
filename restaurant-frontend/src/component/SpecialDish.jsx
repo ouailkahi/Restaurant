@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SpecialDish() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
   return (
     <section className="special-dish text-center" aria-labelledby="dish-label">
       <div className="special-dish-banner">
@@ -20,7 +23,7 @@ function SpecialDish() {
             <del className="del body-3">$40.00</del>
             <span className="span body-1">$20.00</span>
           </div>
-          <Link to={"/service"}className="btn btn-primary">
+          <Link to={"/service"}className="btn btn-primary" onClick={scrollToTop} >
             <span className="text text-1">View All Menu</span>
             <span className="text text-2" aria-hidden="true">View All Menu</span>
           </Link>

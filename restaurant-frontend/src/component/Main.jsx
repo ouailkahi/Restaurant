@@ -13,7 +13,9 @@ export default function Main() {
         <article>
             <Home/>
             {/* <Service/> */}
-            <About/>
+            <section id="about-section">
+          <About />
+        </section>
             <SpecialDish/>
             <Menu/>
             <Features/>

@@ -57,14 +57,23 @@ VALUES ('+212-688445879', 'Delicious City', '12:00:00', '14:30:00', '17:00:00', 
 
 INSERT INTO repas (nom, prix, description, photo, type) 
 VALUES 
-    ('Spaghetti Bolognaise', 12.99, 'Délicieuses pâtes avec une sauce bolognaise maison.', './assets/images/menu-1.png', 'breakfast'),
-    ('Salade César', 8.49, 'Salade fraîche avec poulet grillé, parmesan et vinaigrette césar.', './assets/images/menu-2.png', 'appetizers'),
-    ('Burger Classique', 9.99, 'Burger juteux avec fromage, laitue, tomate et oignon.', './assets/images/menu-3.png', 'drinks'),
-    ('Pizza Pepperoni', 11.50, 'Pizza garnie de pepperoni, fromage fondu et sauce tomate.', './assets/images/menu-4.png', 'breakfast'),
-    ('Sushi Assorti', 14.99, 'Assortiment de sushis frais et savoureux.', './assets/images/menu-5.png', 'appetizers'),
-    ('Salade de Fruits Frais', 6.99, 'Mélange rafraîchissant de fruits de saison.', './assets/images/menu-6.png', 'drinks');
+    ('Msemen', 5.99, 'Délicieux msemen marocain croustillant et feuilleté.', '../assets/images/menu-1.png', 'breakfasts'),
+    ('Baghrir', 4.49, 'Crêpes mille trous servies avec du miel et du beurre.', '../assets/images/menu-2.png', 'breakfasts'),
+    ('Harcha', 6.99, 'Pain de semoule grillé servi avec du miel ou de la confiture.', '../assets/images/menu-3.png', 'breakfasts'),
+    ('Briouates aux Amandes', 7.50, 'Petits triangles feuilletés fourrés aux amandes et parfumés à la fleur d oranger.', '../assets/images/menu-4.png', 'breakfasts'),
+    
+    ('Jus d Orange Frais', 3.99, 'Jus d orange pressé frais.', '../assets/images/menu-5.png', 'drinks'),
+    ('Thé à la Menthe', 3.49, 'Thé vert à la menthe fraîche, sucré selon la tradition marocaine.', '../assets/images/menu-6.png', 'drinks'),
+    ('Café Marocain', 4.99, 'Café noir fort avec une touche de cardamome.', '../assets/images/menu-1.png', 'drinks'),
+    ('Limonade à la Menthe', 4.50, 'Limonade fraîche infusée à la menthe.', '../assets/images/menu-2.png', 'drinks'),
+    
+    ('Brochettes de Kefta', 9.99, 'Brochettes de viande hachée épicée grillée.', '../assets/images/menu-3.png', 'appetizers'),
+    ('Zaalouk', 6.49, 'Salade d aubergines grillées épicées et tomates.', '../assets/images/menu-4.png', 'appetizers'),
+    ('Brick au Thon', 8.99, 'Feuilleté croustillant fourré au thon et aux œufs.', '../assets/images/menu-5.png', 'appetizers'),
+    ('Batbout', 5.50, 'Petits pains moelleux cuits à la vapeur.', '../assets/images/menu-6.png', 'appetizers');
 
 
 
+select * from repas;
 
 

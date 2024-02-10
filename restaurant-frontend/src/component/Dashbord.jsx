@@ -31,7 +31,6 @@ export default function Dashbord() {
           <Navbar />
           <br />
           <br />
-          
           <Outlet />
           <Footer/>
         </React.Fragment>

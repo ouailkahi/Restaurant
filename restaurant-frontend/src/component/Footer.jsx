@@ -3,6 +3,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
@@ -52,12 +55,12 @@ export default function Footer() {
 
 
     return (
-        <footer className="footer section has-bg-image text-center" style={{ backgroundImage: `url('./assets/images/footer-bg.jpg')` }} id="contact">
+        <footer className="footer section has-bg-image text-center" style={{ backgroundImage: `url('../assets/images/footer-bg.jpg')` }} id="contact">
             <div className="container">
                 <div className="footer-top grid-list">
                     <div className="footer-brand has-before has-after">
                         <a href="#" className="logo">
-                            <img src="./assets/images/logo.svg" width="160" height="50" loading="lazy" alt="grilli home" />
+                            <img src="../assets/images/logo.svg" width="160" height="50" loading="lazy" alt="grilli home" />
                         </a>
                         <address className="body-4">
                             {contactInfo.location}
@@ -102,7 +105,7 @@ export default function Footer() {
                             <a href="#" className="label-2 footer-link hover-underline">Home</a>
                         </li>
                         <li>
-                            <Link to={"/service"} className="label-2 footer-link hover-underline">Menus</Link>
+                            <Link to={"/service"} className="label-2 footer-link hover-underline" onClick={scrollToTop}>Menus</Link>
                         </li>
                         <li>
                             <a href="#" className="label-2 footer-link hover-underline">About Us</a>
